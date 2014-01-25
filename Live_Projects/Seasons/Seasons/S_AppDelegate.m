@@ -8,6 +8,8 @@
 
 #import "S_AppDelegate.h"
 
+#define AppStoryboard (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"S_MainStoryboard_iPad" : @"S_MainStoryboard"
+
 @implementation S_AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,10 +17,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    _rootViewController = [[S_BaseViewController alloc] init];
+        
+    _rootViewController = [[UIStoryboard storyboardWithName:AppStoryboard bundle: nil] instantiateViewControllerWithIdentifier:@"S_BaseViewController"];
     self.window.rootViewController = _rootViewController;
-    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+
     [self.window makeKeyAndVisible];
     return YES;
 }

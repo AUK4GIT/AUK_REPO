@@ -27,13 +27,22 @@
     }
     return self;
 }
+- (id)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self createMainThemeImageView];
+    //[self createMainThemeImageView];
 }
 
 - (void)didReceiveMemoryWarning
