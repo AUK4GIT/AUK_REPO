@@ -7,6 +7,7 @@
 //
 
 #import "S_BaseViewController.h"
+#import "S_LoginViewController.h"
 #import "S_Helper.h"
 
 @interface S_BaseViewController ()
@@ -36,19 +37,40 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.3];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    //[self createMainThemeImageView];
+    //[self performSegueWithIdentifier:@"PresentLoginView" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - seague method
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"PresentLoginView"])
+    {
+        //S_LoginViewController *loginViewController = [segue destinationViewController];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"ShowAddSightingView"])
+    {
+//        AddSightingViewController *addSightingViewController = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
+//        addSightingViewController.delegate = self;
+    }
 }
 
 #pragma mark - custom methods
@@ -62,6 +84,14 @@
     [themeImageView setImage:[getThemeImages objectAtIndex:0]];
     [self.view addSubview:themeImageView];
     
+}
+
+/*
+ *  Present LoginView
+ */
+- (void)PresentLoginView
+{
+    [self performSegueWithIdentifier:@"PresentLoginView" sender:self];
 }
 
 @end
