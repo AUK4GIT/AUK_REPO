@@ -25,5 +25,13 @@
     return imagesArray;
 }
 
+/*
+ *  returns action Item object at index
+ */
++(NSArray *)getActionItemObjectAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[[S_DataHelper sharedInstance] getActionItems] objectAtIndex:indexPath.row];
+}
+
 
 @end

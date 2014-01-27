@@ -25,6 +25,10 @@
 		AAA3D4BE18941C9F0040646C /* S_DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3D4BD18941C9F0040646C /* S_DataHelper.m */; };
 		AAA3D4CB189420410040646C /* theme4.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA3D4C5189420410040646C /* theme4.png */; };
 		AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA3D4CF1894344C0040646C /* S_MainStoryboard.storyboard */; };
+		AAB084B61896BD61003329DF /* theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB084B51896BD61003329DF /* theme1.png */; };
+		AAB084B81896BD6E003329DF /* act_item1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB084B71896BD6E003329DF /* act_item1.png */; };
+		AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BB1896D39B003329DF /* S_ActionItemCell.m */; };
+		AAB084C01896D6E4003329DF /* S_ActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BF1896D6E4003329DF /* S_ActionItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,12 @@
 		AAA3D4BD18941C9F0040646C /* S_DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_DataHelper.m; path = Models/S_DataHelper.m; sourceTree = "<group>"; };
 		AAA3D4C5189420410040646C /* theme4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme4.png; path = App_Images/ThemeImages/theme4.png; sourceTree = "<group>"; };
 		AAA3D4CF1894344C0040646C /* S_MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = S_MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AAB084B51896BD61003329DF /* theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme1.png; path = App_Images/ThemeImages/theme1.png; sourceTree = "<group>"; };
+		AAB084B71896BD6E003329DF /* act_item1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = act_item1.png; path = App_Images/ActionItemImages/act_item1.png; sourceTree = "<group>"; };
+		AAB084BA1896D39B003329DF /* S_ActionItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ActionItemCell.h; path = Views/S_ActionItemCell.h; sourceTree = "<group>"; };
+		AAB084BB1896D39B003329DF /* S_ActionItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItemCell.m; path = Views/S_ActionItemCell.m; sourceTree = "<group>"; };
+		AAB084BE1896D6E4003329DF /* S_ActionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ActionItem.h; path = Models/ModelEntities/S_ActionItem.h; sourceTree = "<group>"; };
+		AAB084BF1896D6E4003329DF /* S_ActionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItem.m; path = Models/ModelEntities/S_ActionItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 		AAA3D4691893DA280040646C /* Seasons */ = {
 			isa = PBXGroup;
 			children = (
+				AAB084B91896D33C003329DF /* Views */,
 				AAA3D4CE189433CB0040646C /* UserInterface */,
 				AAA3D4A9189419210040646C /* Models */,
 				AAA3D498189414410040646C /* App_Images */,
@@ -179,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA3D4C11894200A0040646C /* ThemeImages */,
+				AAB084B41896BD1A003329DF /* ActionItemImages */,
 			);
 			name = App_Images;
 			sourceTree = "<group>";
@@ -186,6 +198,7 @@
 		AAA3D4A9189419210040646C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAB084BD1896D6AA003329DF /* ModelEntities */,
 				AAA3D4AA189419930040646C /* S_Helper.h */,
 				AAA3D4AB189419930040646C /* S_Helper.m */,
 				AAA3D4BC18941C9F0040646C /* S_DataHelper.h */,
@@ -197,6 +210,7 @@
 		AAA3D4C11894200A0040646C /* ThemeImages */ = {
 			isa = PBXGroup;
 			children = (
+				AAB084B51896BD61003329DF /* theme1.png */,
 				AAA3D4C5189420410040646C /* theme4.png */,
 			);
 			name = ThemeImages;
@@ -208,6 +222,32 @@
 				AAA3D4CF1894344C0040646C /* S_MainStoryboard.storyboard */,
 			);
 			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		AAB084B41896BD1A003329DF /* ActionItemImages */ = {
+			isa = PBXGroup;
+			children = (
+				AAB084B71896BD6E003329DF /* act_item1.png */,
+			);
+			name = ActionItemImages;
+			sourceTree = "<group>";
+		};
+		AAB084B91896D33C003329DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAB084BA1896D39B003329DF /* S_ActionItemCell.h */,
+				AAB084BB1896D39B003329DF /* S_ActionItemCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AAB084BD1896D6AA003329DF /* ModelEntities */ = {
+			isa = PBXGroup;
+			children = (
+				AAB084BE1896D6E4003329DF /* S_ActionItem.h */,
+				AAB084BF1896D6E4003329DF /* S_ActionItem.m */,
+			);
+			name = ModelEntities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +326,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB084B61896BD61003329DF /* theme1.png in Resources */,
 				AAA3D4CB189420410040646C /* theme4.png in Resources */,
 				AAA3D46E1893DA280040646C /* InfoPlist.strings in Resources */,
 				AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */,
 				AAA3D4761893DA280040646C /* Images.xcassets in Resources */,
+				AAB084B81896BD6E003329DF /* act_item1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB084C01896D6E4003329DF /* S_ActionItem.m in Sources */,
 				AA0C3FCC1895084D00672EAC /* S_LoginViewController.m in Sources */,
 				AAA3D4741893DA280040646C /* S_AppDelegate.m in Sources */,
+				AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */,
 				AAA3D4AF189419D60040646C /* S_BaseViewController.m in Sources */,
 				AAA3D4701893DA280040646C /* main.m in Sources */,
 				AAA3D4AC189419930040646C /* S_Helper.m in Sources */,

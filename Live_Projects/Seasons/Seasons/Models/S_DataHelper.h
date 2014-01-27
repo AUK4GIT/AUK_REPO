@@ -19,4 +19,9 @@
  */
 - (NSArray *)getThemeImages;
 
+/*
+ *  get Action Name
+ */
+- (NSArray *)getActionItems;
+
 @end

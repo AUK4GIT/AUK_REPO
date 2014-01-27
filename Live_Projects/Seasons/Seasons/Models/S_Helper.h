@@ -14,4 +14,9 @@
  *  returns theme images
  */
 +(NSArray *)getThemeImages;
+
+/*
+ *  returns action Item object at index
+ */
++(NSArray *)getActionItemObjectAtIndexPath:(NSIndexPath *)indexPath;
 @end

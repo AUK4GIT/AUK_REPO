@@ -15,6 +15,9 @@
 @end
 
 @implementation S_LoginViewController
+{
+
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
