@@ -9,7 +9,7 @@
 #import "S_ActionItem.h"
 
 @implementation S_ActionItem
-@synthesize imageName,titleLabel;
+//@synthesize imageName,titleLabel;
 
 - (id)init
 {

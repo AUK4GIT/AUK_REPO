@@ -50,7 +50,7 @@
     [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.3];
     
     //Registers Custom Cell
-    [actionsItemsCollectionView registerClass:[S_ActionItemCell class] forCellWithReuseIdentifier:@"actionItemCell"];
+    //[actionsItemsCollectionView registerClass:[S_ActionItemCell class] forCellWithReuseIdentifier:@"actionItemCell"];
 
 }
 
@@ -86,7 +86,7 @@
     //
     
     S_ActionItemCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"actionItemCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor yellowColor];
+
     id itemObject = [S_Helper getActionItemObjectAtIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:[itemObject valueForKey:@"imageName"]];
     cell.itemLabel.text = [itemObject valueForKey:@"titleLabel"];
