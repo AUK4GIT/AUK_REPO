@@ -8,9 +8,11 @@
 
 #import "S_Helper.h"
 #import "S_DataHelper.h"
+#import "S_Constants.h"
 
 @implementation S_Helper
 
+static AppActionItem appActionItem;
 
 /*
  *  returns theme image
@@ -33,5 +35,42 @@
     return [[[S_DataHelper sharedInstance] getActionItems] objectAtIndex:indexPath.row];
 }
 
+/*
+ *  set the selected Item
+ */
++(void)setSelectedAppActionItem:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            appActionItem = AppActionItemShopOnline;
+            break;
+        case 1:
+            appActionItem = AppActionItemGallery;
+            break;
+        case 2:
+            appActionItem = AppActionItemCustomOrder;
+
+            break;
+        case 3:
+            appActionItem = AppActionItemAboutUs;
+            break;
+        case 4:
+            appActionItem = AppActionItemMyAccount;
+            break;
+        case 5:
+            appActionItem = AppActionItemContactUs;
+            break;
+        default:
+            break;
+    }
+}
+
+/*
+ *  get the selected Item
+ */
++(id)getActionItemViewControllerToLoad
+{
+    return nil;
+}
 
 @end

@@ -19,4 +19,14 @@
  *  returns action Item object at index
  */
 +(NSArray *)getActionItemObjectAtIndexPath:(NSIndexPath *)indexPath;
+
+/*
+ *  set the selected Item
+ */
++(void)setSelectedAppActionItem:(NSIndexPath *)indexPath;
+
+/*
+ *  get the selected Item
+ */
++(id)getActionItemViewControllerToLoad;
 @end

@@ -15,14 +15,23 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
+        
+        [_imageView layer].anchorPoint = CGPointMake(0.5f, 0.5f);
     }
     return self;
 }
 
-- (void)prepareForReuse
+- (void)setHighlighted:(BOOL)highlighted
 {
-    [super prepareForReuse];
+    if (highlighted) {
+        self.imageView.transform = CGAffineTransformMakeScale(1.05, 1.05);
+            }
+    else{
+        self.imageView.transform = CGAffineTransformIdentity;
+
+    }
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

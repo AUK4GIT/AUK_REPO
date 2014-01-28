@@ -17,6 +17,7 @@
 
 @implementation S_BaseViewController
 {
+    IBOutlet UIImageView *actionItemBGBlurView;
     IBOutlet UICollectionView *actionsItemsCollectionView;
     IBOutlet UIView *actionItemsBGView;
     UIImageView *themeImageView;
@@ -45,21 +46,35 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
-    
+    actionItemBGBlurView.layer.cornerRadius = 10.0f;
+    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+
     //Presents Login Screen
-    [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.3];
-    
-    //Registers Custom Cell
-    //[actionsItemsCollectionView registerClass:[S_ActionItemCell class] forCellWithReuseIdentifier:@"actionItemCell"];
+    [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.5];
 
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //[self performSegueWithIdentifier:@"PresentLoginView" sender:self];
+
+    [UIView animateWithDuration:0.3 animations:^{
+        actionItemsBGView.alpha = 1.0;
+        actionItemsBGView.transform = CGAffineTransformIdentity;
+    }];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [UIView animateWithDuration:0.3 delay:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        actionItemsBGView.alpha = 0.0;
+        actionItemsBGView.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    } completion:nil];
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -94,26 +109,20 @@
     return cell;
 }
 
+
+
 #pragma mark - Action Items CollectionView Delegates
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [S_Helper setSelectedAppActionItem:indexPath];
+    return YES;
 }
 
 #pragma mark - seague method
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"PresentLoginView"])
-    {
-        //S_LoginViewController *loginViewController = [segue destinationViewController];
-    }
-    
-    if ([[segue identifier] isEqualToString:@"ShowAddSightingView"])
-    {
-//        AddSightingViewController *addSightingViewController = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
-//        addSightingViewController.delegate = self;
-    }
+
 }
 
 #pragma mark - custom methods

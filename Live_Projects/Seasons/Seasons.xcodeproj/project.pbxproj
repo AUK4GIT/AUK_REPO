@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AA0C3FCC1895084D00672EAC /* S_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C3FCB1895084D00672EAC /* S_LoginViewController.m */; };
+		AA516988189813C900351C60 /* S_CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA516987189813C900351C60 /* S_CustomSegue.m */; };
+		AA51698B1898225E00351C60 /* S_DetailsBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA51698A1898225E00351C60 /* S_DetailsBaseViewController.m */; };
+		AA51699018982A8500351C60 /* S_Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA51698F18982A8500351C60 /* S_Constants.m */; };
 		AAA3D4641893DA280040646C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA3D4631893DA280040646C /* Foundation.framework */; };
 		AAA3D4661893DA280040646C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA3D4651893DA280040646C /* CoreGraphics.framework */; };
 		AAA3D4681893DA280040646C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA3D4671893DA280040646C /* UIKit.framework */; };
@@ -44,6 +47,12 @@
 /* Begin PBXFileReference section */
 		AA0C3FCA1895084D00672EAC /* S_LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_LoginViewController.h; path = ViewControllers/S_LoginViewController.h; sourceTree = "<group>"; };
 		AA0C3FCB1895084D00672EAC /* S_LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_LoginViewController.m; path = ViewControllers/S_LoginViewController.m; sourceTree = "<group>"; };
+		AA516986189813C900351C60 /* S_CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_CustomSegue.h; path = Models/S_CustomSegue.h; sourceTree = "<group>"; };
+		AA516987189813C900351C60 /* S_CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_CustomSegue.m; path = Models/S_CustomSegue.m; sourceTree = "<group>"; };
+		AA5169891898225E00351C60 /* S_DetailsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_DetailsBaseViewController.h; path = ViewControllers/S_DetailsBaseViewController.h; sourceTree = "<group>"; };
+		AA51698A1898225E00351C60 /* S_DetailsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_DetailsBaseViewController.m; path = ViewControllers/S_DetailsBaseViewController.m; sourceTree = "<group>"; };
+		AA51698E18982A8500351C60 /* S_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_Constants.h; path = App_Resources/S_Constants.h; sourceTree = "<group>"; };
+		AA51698F18982A8500351C60 /* S_Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_Constants.m; path = App_Resources/S_Constants.m; sourceTree = "<group>"; };
 		AAA3D4601893DA280040646C /* Seasons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seasons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA3D4631893DA280040646C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAA3D4651893DA280040646C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA51698C18982A2400351C60 /* App_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA51698E18982A8500351C60 /* S_Constants.h */,
+				AA51698F18982A8500351C60 /* S_Constants.m */,
+			);
+			name = App_Resources;
+			sourceTree = "<group>";
+		};
 		AAA3D4571893DA280040646C = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,7 @@
 		AAA3D4691893DA280040646C /* Seasons */ = {
 			isa = PBXGroup;
 			children = (
+				AA51698C18982A2400351C60 /* App_Resources */,
 				AAB084B91896D33C003329DF /* Views */,
 				AAA3D4CE189433CB0040646C /* UserInterface */,
 				AAA3D4A9189419210040646C /* Models */,
@@ -182,6 +201,8 @@
 				AAA3D4AE189419D60040646C /* S_BaseViewController.m */,
 				AA0C3FCA1895084D00672EAC /* S_LoginViewController.h */,
 				AA0C3FCB1895084D00672EAC /* S_LoginViewController.m */,
+				AA5169891898225E00351C60 /* S_DetailsBaseViewController.h */,
+				AA51698A1898225E00351C60 /* S_DetailsBaseViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +224,8 @@
 				AAA3D4AB189419930040646C /* S_Helper.m */,
 				AAA3D4BC18941C9F0040646C /* S_DataHelper.h */,
 				AAA3D4BD18941C9F0040646C /* S_DataHelper.m */,
+				AA516986189813C900351C60 /* S_CustomSegue.h */,
+				AA516987189813C900351C60 /* S_CustomSegue.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -354,8 +377,11 @@
 				AA0C3FCC1895084D00672EAC /* S_LoginViewController.m in Sources */,
 				AAA3D4741893DA280040646C /* S_AppDelegate.m in Sources */,
 				AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */,
+				AA516988189813C900351C60 /* S_CustomSegue.m in Sources */,
 				AAA3D4AF189419D60040646C /* S_BaseViewController.m in Sources */,
+				AA51698B1898225E00351C60 /* S_DetailsBaseViewController.m in Sources */,
 				AAA3D4701893DA280040646C /* main.m in Sources */,
+				AA51699018982A8500351C60 /* S_Constants.m in Sources */,
 				AAA3D4AC189419930040646C /* S_Helper.m in Sources */,
 				AAA3D4BE18941C9F0040646C /* S_DataHelper.m in Sources */,
 			);
