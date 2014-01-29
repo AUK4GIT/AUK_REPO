@@ -29,4 +29,21 @@
  *  get the selected Item
  */
 +(id)getActionItemViewControllerToLoad;
+
+/*
+ * checks if image already cached
+ */
++ (BOOL)imageInCache:(NSString *)urlString;
+
+/*
+ * caches downloaded data
+ */
++ (void)cacheData:(NSData *)data forKey:(NSString *)urlStrig;
+
+
+/*
+ * fetch cached image
+ */
++ (UIImage *)getCachedImageForKey:(NSString*)urlString;
+
 @end

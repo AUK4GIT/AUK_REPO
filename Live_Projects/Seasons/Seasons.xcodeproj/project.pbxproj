@@ -35,6 +35,7 @@
 		AAB084B81896BD6E003329DF /* act_item1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB084B71896BD6E003329DF /* act_item1.png */; };
 		AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BB1896D39B003329DF /* S_ActionItemCell.m */; };
 		AAB084C01896D6E4003329DF /* S_ActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BF1896D6E4003329DF /* S_ActionItem.m */; };
+		AAD2632218997F220073428F /* S_ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD2632118997F220073428F /* S_ImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		AAB084BB1896D39B003329DF /* S_ActionItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItemCell.m; path = Views/S_ActionItemCell.m; sourceTree = "<group>"; };
 		AAB084BE1896D6E4003329DF /* S_ActionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ActionItem.h; path = Models/ModelEntities/S_ActionItem.h; sourceTree = "<group>"; };
 		AAB084BF1896D6E4003329DF /* S_ActionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItem.m; path = Models/ModelEntities/S_ActionItem.m; sourceTree = "<group>"; };
+		AAD2632018997F220073428F /* S_ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ImageView.h; path = Views/S_ImageView.h; sourceTree = "<group>"; };
+		AAD2632118997F220073428F /* S_ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ImageView.m; path = Views/S_ImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 		AAB084B91896D33C003329DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AAD2632018997F220073428F /* S_ImageView.h */,
+				AAD2632118997F220073428F /* S_ImageView.m */,
 				AAB084BA1896D39B003329DF /* S_ActionItemCell.h */,
 				AAB084BB1896D39B003329DF /* S_ActionItemCell.m */,
 				27AA7FA6189FD7F100C4DA46 /* S_GalleryItemCell.h */,
@@ -390,6 +395,7 @@
 				AA0C3FCC1895084D00672EAC /* S_LoginViewController.m in Sources */,
 				AAA3D4741893DA280040646C /* S_AppDelegate.m in Sources */,
 				AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */,
+				AAD2632218997F220073428F /* S_ImageView.m in Sources */,
 				AA516988189813C900351C60 /* S_CustomSegue.m in Sources */,
 				AAA3D4AF189419D60040646C /* S_BaseViewController.m in Sources */,
 				AA51698B1898225E00351C60 /* S_DetailsBaseViewController.m in Sources */,

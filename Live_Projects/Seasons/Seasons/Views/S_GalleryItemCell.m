@@ -16,13 +16,13 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
-                
     }
     return self;
 }
 
 - (void)prepareForReuse
 {
+    [__sImageView setImageFromURL:@"http://www.seasons.net.in/Images/Full/96.jpg"];
 
 }
 
@@ -31,24 +31,18 @@
     if (highlighted) {
         [self.layer setShadowColor:[UIColor redColor].CGColor] ;
         [self.layer setShadowOffset:CGSizeMake(3, 3)];
+        self.bgView.backgroundColor = [UIColor redColor];
+        [super setHighlighted:highlighted];
 }
-    else{
-//        [self.layer setShadowColor:[UIColor blackColor].CGColor] ;
-//        [self.layer setShadowOffset:CGSizeMake(2, 2)];
-    }
-}
-
-- (void)setSelected:(BOOL)selected
-{
-    if (selected) {
-//        [self.layer setShadowColor:[UIColor redColor].CGColor] ;
-//        [self.layer setShadowOffset:CGSizeMake(3, 3)];
-    }
     else{
         [self.layer setShadowColor:[UIColor blackColor].CGColor] ;
         [self.layer setShadowOffset:CGSizeMake(2, 2)];
+        self.bgView.backgroundColor = [UIColor clearColor];
+        [super setHighlighted:highlighted];
+
     }
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

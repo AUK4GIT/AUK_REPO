@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "S_ImageView.h"
 
 @interface S_GalleryItemCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIView *bottomBar;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
+@property (strong, nonatomic) IBOutlet S_ImageView *_sImageView;
 
 @end

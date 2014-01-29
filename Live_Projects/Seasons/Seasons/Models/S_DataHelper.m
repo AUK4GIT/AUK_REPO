@@ -13,6 +13,7 @@
 {
     NSArray *_themeImages;
     NSArray *_actionItems;
+    NSMutableDictionary *_imagesCacheDictionary;
 }
 
 /**
@@ -42,6 +43,9 @@
 {
     //Initialises theme images for home screen
     _themeImages = [[NSArray alloc] initWithObjects:@"theme4.png", nil];
+    
+    //Initialise imagessCache dict
+    _imagesCacheDictionary = [[NSMutableDictionary alloc] init];
     
     //Initialise action Items
     [self createInitialActionItems];
@@ -96,5 +100,30 @@
 {
     return _actionItems;
 }
+
+/*
+ * checks if image already cached
+ */
+- (BOOL)imageInCache:(NSString *)urlString
+{
+    return [[_imagesCacheDictionary allKeys] containsObject:urlString];
+}
+
+/*
+ * caches downloaded data
+ */
+- (void)cacheData:(NSData *)data forKey:(NSString *)urlStrig
+{
+    [_imagesCacheDictionary setObject:data forKey:urlStrig];
+}
+
+/*
+ * fetch cached image
+ */
+- (UIImage *)getCachedImageForKey:(NSString*)urlString
+{
+    return [UIImage imageWithData:[_imagesCacheDictionary objectForKey:urlString]];
+}
+
 
 @end

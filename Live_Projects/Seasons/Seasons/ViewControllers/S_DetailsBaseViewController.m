@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 AUK. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "S_DetailsBaseViewController.h"
 #import "S_GalleryItemCell.h"
 @interface S_DetailsBaseViewController ()
@@ -69,20 +70,18 @@
     S_GalleryItemCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GalleryItemCell" forIndexPath:indexPath];
     
     CALayer *layer = cell.layer;
+    layer.cornerRadius = 10.0;
     layer.masksToBounds = NO;
     [layer setShadowOffset:CGSizeMake(2, 2)];
     [layer setShadowRadius:1.0];
     [layer setShadowColor:[UIColor blackColor].CGColor] ;
     [layer setShadowOpacity:0.5];
-    [layer setShadowPath:[[UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:10.0] CGPath]];
+    [layer setShadowPath:[[UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:10.0f] CGPath]];
     
-//    cell.imageView.layer.masksToBounds = YES;
-//    cell.bottomBar.layer.masksToBounds = NO;
-//    cell.imageView.layer.cornerRadius = 10.0;
-//    cell.bottomBar.layer.cornerRadius = 10.0;
+    cell.bgView.layer.masksToBounds = YES;
+    cell.bgView.layer.cornerRadius = 10.0f;
     
     return cell;
 }
-
 
 @end

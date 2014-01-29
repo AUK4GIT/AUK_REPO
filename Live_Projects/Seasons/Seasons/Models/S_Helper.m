@@ -73,4 +73,30 @@ static AppActionItem appActionItem;
     return nil;
 }
 
+
+/*
+ * checks if image already cached
+ */
++ (BOOL)imageInCache:(NSString *)urlString
+{
+    return [[S_DataHelper sharedInstance] imageInCache:urlString];
+}
+
+/*
+ * caches downloaded data
+ */
++ (void)cacheData:(NSData *)data forKey:(NSString *)urlStrig
+{
+    [[S_DataHelper sharedInstance] cacheData:data forKey:urlStrig];
+}
+
+/*
+ * fetch cached image
+ */
++ (UIImage *)getCachedImageForKey:(NSString*)urlString
+{
+    return [[S_DataHelper sharedInstance] getCachedImageForKey:urlString];
+}
+
+
 @end
