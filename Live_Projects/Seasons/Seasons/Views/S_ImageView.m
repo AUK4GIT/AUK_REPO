@@ -79,7 +79,9 @@
     [pImageView setNeedsLayout];
 
     urlString = [[NSString alloc] initWithString:url];
-    urlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] delegate:self];
+//    urlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seasons.net.in/UserShopping.aspx?page=3"]] delegate:self];
+    urlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]] delegate:self];
+
 }
 
 - (void)layoutSubviews
@@ -105,7 +107,7 @@
         //If you need the response, you can use it here
         NSDictionary *dicFields = [httpResponse allHeaderFields];
         
-        //NSLog(@"didReceiveResponse: %@ %d",dicFields,httpResponse.statusCode);
+        NSLog(@"didReceiveResponse: %@ %d",dicFields,httpResponse.statusCode);
         
         if (!([[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpeg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/png"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/bmp"]) && (httpResponse.statusCode == 200))
         {
@@ -140,9 +142,12 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+//    NSString *myString = [[NSString alloc] initWithData:mData encoding:NSUTF8StringEncoding];
+//    NSLog(@"myString: %@",myString);
+    
     urlConnection = nil;
     [loadingIndicator stopAnimating];
-NSLog(@"Data length: %d %f",[mData length],[UIImage imageWithData:mData].size.height);
+NSLog(@"Data length: %lu %f",(unsigned long)[mData length],[UIImage imageWithData:mData].size.height);
     NSOperationQueue *queue = [NSOperationQueue currentQueue];
     [queue addOperationWithBlock:^{
         
