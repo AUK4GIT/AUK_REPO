@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-lz-keJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-lz-keJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -323,7 +323,7 @@
     </scenes>
     <resources>
         <image name="act_item1.png" width="96" height="96"/>
-        <image name="theme1.png" width="640" height="1136"/>
+        <image name="theme4.jpg" width="640" height="1136"/>
     </resources>
     <color key="tintColor" red="0.64652683423913038" green="0.087684600658924639" blue="0.2900802793344438" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

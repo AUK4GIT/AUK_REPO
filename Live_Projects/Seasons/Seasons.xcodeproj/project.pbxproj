@@ -29,9 +29,8 @@
 		AAA3D4AC189419930040646C /* S_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3D4AB189419930040646C /* S_Helper.m */; };
 		AAA3D4AF189419D60040646C /* S_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3D4AE189419D60040646C /* S_BaseViewController.m */; };
 		AAA3D4BE18941C9F0040646C /* S_DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3D4BD18941C9F0040646C /* S_DataHelper.m */; };
-		AAA3D4CB189420410040646C /* theme4.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA3D4C5189420410040646C /* theme4.png */; };
+		AAA3D4CB189420410040646C /* theme4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAA3D4C5189420410040646C /* theme4.jpg */; };
 		AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA3D4CF1894344C0040646C /* S_MainStoryboard.storyboard */; };
-		AAB084B61896BD61003329DF /* theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB084B51896BD61003329DF /* theme1.png */; };
 		AAB084B81896BD6E003329DF /* act_item1.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB084B71896BD6E003329DF /* act_item1.png */; };
 		AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BB1896D39B003329DF /* S_ActionItemCell.m */; };
 		AAB084C01896D6E4003329DF /* S_ActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BF1896D6E4003329DF /* S_ActionItem.m */; };
@@ -83,9 +82,8 @@
 		AAA3D4AE189419D60040646C /* S_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_BaseViewController.m; path = ViewControllers/S_BaseViewController.m; sourceTree = "<group>"; };
 		AAA3D4BC18941C9F0040646C /* S_DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_DataHelper.h; path = Models/S_DataHelper.h; sourceTree = "<group>"; };
 		AAA3D4BD18941C9F0040646C /* S_DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_DataHelper.m; path = Models/S_DataHelper.m; sourceTree = "<group>"; };
-		AAA3D4C5189420410040646C /* theme4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme4.png; path = App_Images/ThemeImages/theme4.png; sourceTree = "<group>"; };
+		AAA3D4C5189420410040646C /* theme4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = theme4.jpg; path = App_Images/ThemeImages/theme4.jpg; sourceTree = "<group>"; };
 		AAA3D4CF1894344C0040646C /* S_MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = S_MainStoryboard.storyboard; sourceTree = "<group>"; };
-		AAB084B51896BD61003329DF /* theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = theme1.png; path = App_Images/ThemeImages/theme1.png; sourceTree = "<group>"; };
 		AAB084B71896BD6E003329DF /* act_item1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = act_item1.png; path = App_Images/ActionItemImages/act_item1.png; sourceTree = "<group>"; };
 		AAB084BA1896D39B003329DF /* S_ActionItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ActionItemCell.h; path = Views/S_ActionItemCell.h; sourceTree = "<group>"; };
 		AAB084BB1896D39B003329DF /* S_ActionItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItemCell.m; path = Views/S_ActionItemCell.m; sourceTree = "<group>"; };
@@ -246,8 +244,7 @@
 		AAA3D4C11894200A0040646C /* ThemeImages */ = {
 			isa = PBXGroup;
 			children = (
-				AAB084B51896BD61003329DF /* theme1.png */,
-				AAA3D4C5189420410040646C /* theme4.png */,
+				AAA3D4C5189420410040646C /* theme4.jpg */,
 			);
 			name = ThemeImages;
 			sourceTree = "<group>";
@@ -366,8 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB084B61896BD61003329DF /* theme1.png in Resources */,
-				AAA3D4CB189420410040646C /* theme4.png in Resources */,
+				AAA3D4CB189420410040646C /* theme4.jpg in Resources */,
 				AAA3D46E1893DA280040646C /* InfoPlist.strings in Resources */,
 				27AA7FA3189FD1FA00C4DA46 /* flower.jpg in Resources */,
 				AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */,
@@ -524,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cognizant Technology Solutions India Pvt Ltd/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Seasons/Seasons-Prefix.pch";
 				INFOPLIST_FILE = "Seasons/Seasons-Info.plist";
@@ -538,6 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cognizant Technology Solutions India Pvt Ltd/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Seasons/Seasons-Prefix.pch";
 				INFOPLIST_FILE = "Seasons/Seasons-Info.plist";

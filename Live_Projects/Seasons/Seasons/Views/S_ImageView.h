@@ -17,5 +17,6 @@
      UIImageView *pImageView;
      UIActivityIndicatorView *loadingIndicator;
 }
+
 - (void)setImageFromURL:(NSString *)url;
 @end

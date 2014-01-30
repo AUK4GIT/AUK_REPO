@@ -131,7 +131,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    //NSLog(@"didReceiveData: %@",data);
     
     if (mData==nil) {
         mData = [[NSMutableData alloc] init];
@@ -143,8 +142,9 @@
 {
     urlConnection = nil;
     [loadingIndicator stopAnimating];
-
-    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+NSLog(@"Data length: %d %f",[mData length],[UIImage imageWithData:mData].size.height);
+    NSOperationQueue *queue = [NSOperationQueue currentQueue];
+    [queue addOperationWithBlock:^{
         
         UIImage *resizedImage = [self resizeImage:[UIImage imageWithData:mData]];
         
@@ -152,10 +152,12 @@
         NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(resizedImage)];
         
         [self cacheData:imageData forKey:urlString];
-    //});
-        
-    urlString = nil;
-    mData = nil;
+        urlString = nil;
+        mData = nil;
+    }];
+    
+    
+
 }
 
 - (void)cacheData:(NSData *)data forKey:(NSString *)url
@@ -165,7 +167,7 @@
 
 -(UIImage *)resizeImage:(UIImage *)image {
     
-   // NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
+    NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
 
     int w = image.size.width;
     
