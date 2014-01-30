@@ -170,7 +170,7 @@
                         <viewControllerLayoutGuide type="top" id="s1V-Xi-q8d"/>
                         <viewControllerLayoutGuide type="bottom" id="jpx-y8-GjB"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.79999999999999982" contentMode="scaleToFill" id="7M2-RR-PMY">
+                    <view key="view" contentMode="scaleToFill" id="7M2-RR-PMY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -187,11 +187,11 @@
                                     <size key="itemSize" width="135" height="193"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="25" maxX="5" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="25" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" restorationIdentifier="S_GalleryItemCell" reuseIdentifier="GalleryItemCell" id="b1F-lZ-0ZV" customClass="S_GalleryItemCell">
-                                        <rect key="frame" x="5" y="25" width="135" height="193"/>
+                                        <rect key="frame" x="10" y="25" width="135" height="193"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="135" height="193"/>
@@ -250,13 +250,19 @@
                                     <outlet property="delegate" destination="cja-1e-Ah1" id="orb-74-xHE"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZs-Ex-lZY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZs-Ex-lZY">
                                 <rect key="frame" x="20" y="17" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.64652683420000001" green="0.087684600660000001" blue="0.29008027930000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.64652683420000001" green="0.087684600660000001" blue="0.29008027930000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.64652683420000001" green="0.087684600660000001" blue="0.29008027930000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="cja-1e-Ah1" kind="custom" identifier="DismissItemSelectionSegue" customClass="S_CustomSegue" id="ekd-Tc-sgA"/>
@@ -265,14 +271,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wZs-Ex-lZY" firstAttribute="top" secondItem="s1V-Xi-q8d" secondAttribute="bottom" constant="17" id="048-Vy-wUA"/>
+                            <constraint firstItem="sPb-mC-rUj" firstAttribute="top" secondItem="s1V-Xi-q8d" secondAttribute="bottom" constant="20" id="497-nc-jUz"/>
                             <constraint firstItem="bAh-Dj-eUD" firstAttribute="leading" secondItem="7M2-RR-PMY" secondAttribute="leading" constant="10" id="K0k-UN-iWK"/>
                             <constraint firstItem="sPb-mC-rUj" firstAttribute="leading" secondItem="7M2-RR-PMY" secondAttribute="leading" constant="10" id="NZP-cw-9uy"/>
                             <constraint firstAttribute="bottom" secondItem="sPb-mC-rUj" secondAttribute="bottom" constant="10" id="S2b-Wu-1Ne"/>
-                            <constraint firstItem="bAh-Dj-eUD" firstAttribute="top" secondItem="7M2-RR-PMY" secondAttribute="top" constant="20" id="SmG-lg-KND"/>
-                            <constraint firstItem="sPb-mC-rUj" firstAttribute="top" secondItem="7M2-RR-PMY" secondAttribute="top" constant="20" id="YJd-tY-Vhc"/>
+                            <constraint firstItem="bAh-Dj-eUD" firstAttribute="top" secondItem="s1V-Xi-q8d" secondAttribute="bottom" constant="20" id="Yy4-WL-Ler"/>
+                            <constraint firstAttribute="trailing" secondItem="wZs-Ex-lZY" secondAttribute="trailing" constant="244" id="mwe-T8-r4A"/>
                             <constraint firstItem="jpx-y8-GjB" firstAttribute="top" secondItem="bAh-Dj-eUD" secondAttribute="bottom" constant="10" id="qcG-OL-dc0"/>
                             <constraint firstAttribute="trailing" secondItem="sPb-mC-rUj" secondAttribute="trailing" constant="10" id="qgG-8f-cYo"/>
                             <constraint firstAttribute="trailing" secondItem="bAh-Dj-eUD" secondAttribute="trailing" constant="10" id="y96-ZE-IeY"/>
+                            <constraint firstItem="wZs-Ex-lZY" firstAttribute="leading" secondItem="7M2-RR-PMY" secondAttribute="leading" constant="20" id="zbS-s1-c0a"/>
                         </constraints>
                     </view>
                     <connections>

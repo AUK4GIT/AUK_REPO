@@ -45,7 +45,7 @@
     //Initialises theme images for home screen
     _themeImages = [[NSArray alloc] initWithObjects:@"theme4.jpg", nil];
     
-    _smallImagesURLArray = [[NSArray alloc] initWithObjects:@"http://www.seasons.net.in/Images/Small/1.jpg",@"http://www.seasons.net.in/Images/Small/5.jpg",@"http://www.seasons.net.in/Images/Small/98.jpg",@"http://www.seasons.net.in/Images/Small/95.jpg",@"http://www.seasons.net.in/Images/Small/96.jpg",@"http://www.seasons.net.in/Images/Small/100.jpg",@"http://www.seasons.net.in/Images/Small/101.jpg",@"http://www.seasons.net.in/Images/Small/102.jpg",@"http://www.seasons.net.in/Images/Small/93.jpg",@"http://www.seasons.net.in/Images/Small/103.jpg", nil];
+    _smallImagesURLArray = [[NSArray alloc] initWithObjects:@"http://www.seasons.net.in/Images/Small/1.jpg",@"http://www.seasons.net.in/Images/Small/5.jpg",@"http://www.seasons.net.in/Images/Small/98.jpg",@"http://www.seasons.net.in/Images/Small/95.jpg",@"http://www.seasons.net.in/Images/Small/96.jpg",@"http://www.seasons.net.in/Images/Small/100.jpg",@"http://www.seasons.net.in/Images/Small/101.jpg",@"http://www.seasons.net.in/Images/Small/102.jpg",@"http://www.seasons.net.in/Images/Small/93.jpg",@"http://www.seasons.net.in/Images/Small/103.jpg",@"http://www.seasons.net.in/Images/Small/103.jpg",@"http://www.seasons.net.in/Images/Small/100.jpg",@"http://www.seasons.net.in/Images/Small/92.jpg",@"http://www.seasons.net.in/Images/Small/92.jpg",@"http://www.seasons.net.in/Images/Small/92.jpg",@"http://www.seasons.net.in/Images/Small/92.jpg",@"http://www.seasons.net.in/Images/Small/92.jpg", nil];
     
     //Initialise imagessCache dict
     _imagesCacheDictionary = [[NSMutableDictionary alloc] init];

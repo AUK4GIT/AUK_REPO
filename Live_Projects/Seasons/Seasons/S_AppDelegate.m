@@ -19,9 +19,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
         
     _rootViewController = [[UIStoryboard storyboardWithName:AppStoryboard bundle: nil] instantiateViewControllerWithIdentifier:@"S_BaseNaviViewController"];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+
     self.window.rootViewController = _rootViewController;
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
