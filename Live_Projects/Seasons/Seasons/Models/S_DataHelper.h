@@ -40,4 +40,9 @@
  */
 - (UIImage *)getCachedImageForKey:(NSString*)urlString;
 
+/*
+ * get Small image URLs
+ */
+- (NSString *)getSmallImageURLString:(NSInteger)index;
+
 @end

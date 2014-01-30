@@ -14,6 +14,7 @@
     NSArray *_themeImages;
     NSArray *_actionItems;
     NSMutableDictionary *_imagesCacheDictionary;
+    NSArray *_smallImagesURLArray;
 }
 
 /**
@@ -43,6 +44,8 @@
 {
     //Initialises theme images for home screen
     _themeImages = [[NSArray alloc] initWithObjects:@"theme4.png", nil];
+    
+    _smallImagesURLArray = [[NSArray alloc] initWithObjects:@"http://www.seasons.net.in/Images/Small/1.jpg",@"http://www.seasons.net.in/Images/Small/5.jpg",@"http://www.seasons.net.in/Images/Small/98.jpg",@"http://www.seasons.net.in/Images/Small/95.jpg",@"http://www.seasons.net.in/Images/Small/96.jpg",@"http://www.seasons.net.in/Images/Small/100.jpg",@"http://www.seasons.net.in/Images/Small/101.jpg",@"http://www.seasons.net.in/Images/Small/102.jpg",@"http://www.seasons.net.in/Images/Small/93.jpg",@"http://www.seasons.net.in/Images/Small/103.jpg", nil];
     
     //Initialise imagessCache dict
     _imagesCacheDictionary = [[NSMutableDictionary alloc] init];
@@ -123,6 +126,17 @@
 - (UIImage *)getCachedImageForKey:(NSString*)urlString
 {
     return [UIImage imageWithData:[_imagesCacheDictionary objectForKey:urlString]];
+}
+
+/*
+ * get Small image URLs
+ */
+- (NSString *)getSmallImageURLString:(NSInteger)index
+{
+    if (index < [_smallImagesURLArray count])
+        return [_smallImagesURLArray objectAtIndex:index];
+    else
+        return nil;
 }
 
 

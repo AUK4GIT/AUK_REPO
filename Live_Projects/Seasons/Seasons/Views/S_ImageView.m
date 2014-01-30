@@ -41,12 +41,18 @@
     if (mData != nil) {
         mData = nil;
     }
+    if (pImageView) {
+        [pImageView removeFromSuperview];
+    }
+    if (loadingIndicator) {
+        [loadingIndicator removeFromSuperview];
+    }
     
     pImageView = [[UIImageView alloc] init];
     pImageView.contentMode = UIViewContentModeScaleAspectFit;
 
     pImageView.frame = self.bounds;
-    pImageView.backgroundColor = [UIColor lightGrayColor];
+    pImageView.backgroundColor = [UIColor clearColor];
     [self addSubview:pImageView];
     
     if ((url == nil) || [url length] == 0) {
@@ -62,11 +68,10 @@
         return;
     }
     
-    self.bounds = CGRectMake(0, 0, 42, 50);
-    
     loadingIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    loadingIndicator.center = CGPointMake(21, 25);
+    loadingIndicator.center = self.center;
     [self addSubview:loadingIndicator];
+    [loadingIndicator hidesWhenStopped];
     [loadingIndicator startAnimating];
     
      // is this necessary if superview gets setNeedsLayout?
@@ -75,6 +80,12 @@
 
     urlString = [[NSString alloc] initWithString:url];
     urlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] delegate:self];
+}
+
+- (void)layoutSubviews
+{
+    pImageView.frame = self.bounds;
+    loadingIndicator.center = self.center;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -94,12 +105,16 @@
         //If you need the response, you can use it here
         NSDictionary *dicFields = [httpResponse allHeaderFields];
         
-        NSLog(@"didReceiveResponse: %@ %d",dicFields,httpResponse.statusCode);
+        //NSLog(@"didReceiveResponse: %@ %d",dicFields,httpResponse.statusCode);
         
-//        if (([[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpeg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/png"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/bmp"]) && (httpResponse.statusCode == 200))
-//        {
-//            
-//        }
+        if (!([[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpeg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/png"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/bmp"]) && (httpResponse.statusCode == 200))
+        {
+            NSLog(@"Error: Image format not supported");
+            pImageView.image = [UIImage imageNamed:@"noimage.png"];
+            [urlConnection cancel];
+            [loadingIndicator stopAnimating];
+            urlString = nil;
+        }
         
         if (httpResponse.statusCode != 200)
         {
@@ -128,16 +143,17 @@
 {
     urlConnection = nil;
     [loadingIndicator stopAnimating];
-    NSLog(@"Data length: %d %f",[mData length],[UIImage imageWithData:mData].size.height);
-    UIImage *resizedImage = [self resizeImage:[UIImage imageWithData:mData]];
-    
-    pImageView.image = resizedImage;
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(resizedImage)];
-    NSLog(@"resized image length: %d",[imageData length]);
-    NSLog(@"resized Image size width: %f height: %f",[UIImage imageWithData:imageData].size.width,[UIImage imageWithData:imageData].size.height);
 
-    [self cacheData:imageData forKey:urlString];
-    
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        UIImage *resizedImage = [self resizeImage:[UIImage imageWithData:mData]];
+        
+        pImageView.image = resizedImage;
+        NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(resizedImage)];
+        
+        [self cacheData:imageData forKey:urlString];
+    //});
+        
     urlString = nil;
     mData = nil;
 }
@@ -149,7 +165,7 @@
 
 -(UIImage *)resizeImage:(UIImage *)image {
     
-    NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
+   // NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
 
     int w = image.size.width;
     
@@ -160,9 +176,9 @@
     
     int width, height;
     
-    int destWidth = 42;
+    int destWidth = 135;
     
-    int destHeight = 50;
+    int destHeight = 140;
     
     if(w > h){
         
@@ -177,13 +193,13 @@
         width = w*destHeight/h;
         
     }
-    NSLog(@"Resized Image size height: %d width: %d",height,width);
+    //NSLog(@"Resized Image size width: %d heighgt: %d",width,height);
 
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
     CGContextRef bitmap;
     
-    bitmap = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedFirst);
+    bitmap = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedFirst);
     
     CGColorSpaceRelease(colorSpace);
     

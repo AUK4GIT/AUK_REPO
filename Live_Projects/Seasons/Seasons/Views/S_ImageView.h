@@ -10,12 +10,12 @@
 
 @interface S_ImageView : UIView
 {
-    NSURLConnection *urlConnection;
-    NSMutableData *mData;
-    NSString *urlString;
+     NSURLConnection *urlConnection;
+     NSMutableData *mData;
+     NSString *urlString;
     
-    UIImageView *pImageView;
-    UIActivityIndicatorView *loadingIndicator;
+     UIImageView *pImageView;
+     UIActivityIndicatorView *loadingIndicator;
 }
 - (void)setImageFromURL:(NSString *)url;
 @end

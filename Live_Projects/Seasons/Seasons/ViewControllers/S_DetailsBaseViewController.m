@@ -9,6 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "S_DetailsBaseViewController.h"
 #import "S_GalleryItemCell.h"
+#import "S_Helper.h"
+
 @interface S_DetailsBaseViewController ()
 {
 
@@ -59,7 +61,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return 6;
+    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -80,6 +82,8 @@
     
     cell.bgView.layer.masksToBounds = YES;
     cell.bgView.layer.cornerRadius = 10.0f;
+    
+    [cell._sImageView setImageFromURL:[S_Helper getSmallImageURLString:indexPath]];
     
     return cell;
 }

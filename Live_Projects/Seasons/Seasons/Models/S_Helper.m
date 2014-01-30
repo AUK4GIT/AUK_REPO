@@ -98,5 +98,12 @@ static AppActionItem appActionItem;
     return [[S_DataHelper sharedInstance] getCachedImageForKey:urlString];
 }
 
+/*
+ * get Small image URLs
+ */
++ (NSString *)getSmallImageURLString:(NSIndexPath *)indexPath
+{
+    return [[S_DataHelper sharedInstance] getSmallImageURLString:indexPath.row];
+}
 
 @end

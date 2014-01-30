@@ -22,7 +22,7 @@
 
 - (void)prepareForReuse
 {
-    [__sImageView setImageFromURL:@"http://www.seasons.net.in/Images/Full/96.jpg"];
+    
 
 }
 
