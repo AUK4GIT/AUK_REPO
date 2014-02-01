@@ -92,7 +92,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Error: %@",error);
+   // NSLog(@"Error: %@",error);
     pImageView.image = [UIImage imageNamed:@"noimage.png"];
 
     [loadingIndicator stopAnimating];
@@ -107,11 +107,11 @@
         //If you need the response, you can use it here
         NSDictionary *dicFields = [httpResponse allHeaderFields];
         
-        NSLog(@"didReceiveResponse: %@ %d",dicFields,httpResponse.statusCode);
+        //NSLog(@"didReceiveResponse: %@ %ld",dicFields,(long)httpResponse.statusCode);
         
         if (!([[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpeg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/jpg"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/png"] || [[dicFields valueForKey:@"Content-Type"] isEqualToString:@"image/bmp"]) && (httpResponse.statusCode == 200))
         {
-            NSLog(@"Error: Image format not supported");
+            //NSLog(@"Error: Image format not supported");
             pImageView.image = [UIImage imageNamed:@"noimage.png"];
             [urlConnection cancel];
             [loadingIndicator stopAnimating];
@@ -120,7 +120,7 @@
         
         if (httpResponse.statusCode != 200)
         {
-            NSLog(@"Error: Image format not supported");
+            //NSLog(@"Error: Image format not supported");
             pImageView.image = [UIImage imageNamed:@"noimage.png"];
             [urlConnection cancel];
             [loadingIndicator stopAnimating];
@@ -147,12 +147,12 @@
     
     urlConnection = nil;
     [loadingIndicator stopAnimating];
-NSLog(@"Data length: %lu %f",(unsigned long)[mData length],[UIImage imageWithData:mData].size.height);
+
     NSOperationQueue *queue = [NSOperationQueue currentQueue];
     [queue addOperationWithBlock:^{
         
         UIImage *resizedImage = [self resizeImage:[UIImage imageWithData:mData]];
-        
+
         pImageView.image = resizedImage;
         NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(resizedImage)];
         
@@ -172,42 +172,30 @@ NSLog(@"Data length: %lu %f",(unsigned long)[mData length],[UIImage imageWithDat
 
 -(UIImage *)resizeImage:(UIImage *)image {
     
-    NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
+    //NSLog(@"Original Image size width: %f height: %f",image.size.width,image.size.height);
 
-    int w = image.size.width;
+    NSInteger destWidth = 135;
+    NSInteger destHeight = 140;
+    NSInteger w = image.size.width;
+    NSInteger h = image.size.height;
+
+    CGFloat hfactor = w / destWidth;
+    CGFloat vfactor = h / destHeight;
+    CGFloat factor = fmax(hfactor, vfactor);
     
-    int h = image.size.height;
-
+    NSInteger width, height;
+    width = w/factor;
+    height = h/factor;
     
     CGImageRef imageRef = [image CGImage];
     
-    int width, height;
-    
-    int destWidth = 135;
-    
-    int destHeight = 140;
-    
-    if(w > h){
-        
-        width = destWidth;
-        
-        height = h*destWidth/w;
-        
-    } else {
-        
-        height = destHeight;
-        
-        width = w*destHeight/h;
-        
-    }
-    //NSLog(@"Resized Image size width: %d heighgt: %d",width,height);
-
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
     CGContextRef bitmap;
+    CGFloat scaleFactor = [[UIScreen mainScreen] scale];
     
-    bitmap = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedFirst);
-    
+    bitmap = CGBitmapContextCreate(NULL, width*scaleFactor, height*scaleFactor, 8, 4 * width * scaleFactor, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedFirst);
+    CGContextScaleCTM(bitmap, scaleFactor, scaleFactor);
     CGColorSpaceRelease(colorSpace);
     
     if (image.imageOrientation == UIImageOrientationLeft) {
@@ -237,6 +225,9 @@ NSLog(@"Data length: %lu %f",(unsigned long)[mData length],[UIImage imageWithDat
     CGImageRef ref = CGBitmapContextCreateImage(bitmap);
     
     UIImage *result = [UIImage imageWithCGImage:ref];
+    
+    NSLog(@"Resized Image size width: url: %@\t%ld heighgt: %ld length: %ld",urlString,(long)width,(long)height,(unsigned long)UIImagePNGRepresentation(result).length);
+
     
     CGContextRelease(bitmap);
     
