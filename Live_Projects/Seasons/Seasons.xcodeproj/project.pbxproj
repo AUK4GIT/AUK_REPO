@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27AA7FA3189FD1FA00C4DA46 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27AA7FA2189FD1FA00C4DA46 /* flower.jpg */; };
 		27AA7FA5189FD41600C4DA46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AA7FA4189FD41600C4DA46 /* QuartzCore.framework */; };
 		27AA7FA8189FD7F100C4DA46 /* S_GalleryItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA7FA7189FD7F100C4DA46 /* S_GalleryItemCell.m */; };
 		AA0C3FCC1895084D00672EAC /* S_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C3FCB1895084D00672EAC /* S_LoginViewController.m */; };
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27AA7FA2189FD1FA00C4DA46 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = flower.jpg; path = App_Images/flower.jpg; sourceTree = "<group>"; };
 		27AA7FA4189FD41600C4DA46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27AA7FA6189FD7F100C4DA46 /* S_GalleryItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_GalleryItemCell.h; path = Views/S_GalleryItemCell.h; sourceTree = "<group>"; };
 		27AA7FA7189FD7F100C4DA46 /* S_GalleryItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_GalleryItemCell.m; path = Views/S_GalleryItemCell.m; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		AAA3D498189414410040646C /* App_Images */ = {
 			isa = PBXGroup;
 			children = (
-				27AA7FA2189FD1FA00C4DA46 /* flower.jpg */,
 				AAA3D4C11894200A0040646C /* ThemeImages */,
 				AAB084B41896BD1A003329DF /* ActionItemImages */,
 			);
@@ -365,7 +362,6 @@
 			files = (
 				AAA3D4CB189420410040646C /* theme4.jpg in Resources */,
 				AAA3D46E1893DA280040646C /* InfoPlist.strings in Resources */,
-				27AA7FA3189FD1FA00C4DA46 /* flower.jpg in Resources */,
 				AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */,
 				AAA3D4761893DA280040646C /* Images.xcassets in Resources */,
 				AAB084B81896BD6E003329DF /* act_item1.png in Resources */,

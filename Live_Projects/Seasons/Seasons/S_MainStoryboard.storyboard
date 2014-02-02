@@ -110,7 +110,6 @@
                                                 <connections>
                                                     <outlet property="imageView" destination="n7Z-vl-t8b" id="GUL-ut-pSg"/>
                                                     <outlet property="itemLabel" destination="gyj-3s-lMA" id="IQm-bx-1AP"/>
-                                                    <segue destination="cja-1e-Ah1" kind="custom" identifier="ItemSelectionSegue" customClass="S_CustomSegue" id="BFZ-dF-fkj"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -156,6 +155,7 @@
                         <outlet property="actionItemsBGView" destination="frm-8U-A2e" id="IpY-AX-i2m"/>
                         <outlet property="actionsItemsCollectionView" destination="a6P-Km-prW" id="rkh-HE-Hqg"/>
                         <segue destination="0x1-zq-HsC" kind="modal" identifier="PresentLoginView" modalTransitionStyle="crossDissolve" id="igv-py-Lkn"/>
+                        <segue destination="cja-1e-Ah1" kind="custom" identifier="ItemSelectionSegue" customClass="S_CustomSegue" id="lU4-8P-Ghm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSz-od-D1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYG-Rx-YlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="47"/>
+            <point key="canvasLocation" x="940" y="47"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dKc-w2-hxw">
@@ -345,6 +345,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BFZ-dF-fkj"/>
+        <segue reference="lU4-8P-Ghm"/>
     </inferredMetricsTieBreakers>
 </document>

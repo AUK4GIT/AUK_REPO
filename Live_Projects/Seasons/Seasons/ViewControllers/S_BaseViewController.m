@@ -44,7 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
+    
 	// Do any additional setup after loading the view.
     actionItemBGBlurView.layer.cornerRadius = 10.0f;
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
@@ -59,23 +59,17 @@
 {
     [super viewDidAppear:animated];
 
-    [UIView animateWithDuration:0.3 animations:^{
-        actionItemsBGView.alpha = 1.0;
-        actionItemsBGView.transform = CGAffineTransformIdentity;
-    }];
+    [self performSelector:@selector(maximizeView) withObject:nil afterDelay:0.1];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     
-    [UIView animateWithDuration:0.3 delay:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        actionItemsBGView.alpha = 0.0;
-        actionItemsBGView.transform = CGAffineTransformMakeScale(0.0, 0.0);
-    } completion:nil];
-
+    [self minimizeView];
+    
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -110,8 +104,6 @@
     return cell;
 }
 
-
-
 #pragma mark - Action Items CollectionView Delegates
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -120,6 +112,14 @@
     return YES;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSelector:@selector(minimizeView) withObject:nil afterDelay:0.2];
+    [self performSelector:@selector(loadDetailsView:) withObject:@"ItemSelectionSegue" afterDelay:0.6];
+    
+}
+
+
 #pragma mark - seague method
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -127,6 +127,34 @@
 }
 
 #pragma mark - custom methods
+
+- (void)loadDetailsView:(NSString *)seagueString
+{
+    [self performSegueWithIdentifier:seagueString sender:self];
+}
+
+- (void)maximizeView
+{
+
+    [UIView animateWithDuration:0.3 animations:^{
+        actionItemsBGView.alpha = 1.0;
+        actionItemsBGView.transform = CGAffineTransformIdentity;
+    }];
+
+}
+
+- (void)minimizeView
+{
+    
+    [UIView animateWithDuration:0.3 delay:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        actionItemsBGView.alpha = 0.0;
+        actionItemsBGView.transform = CGAffineTransformScale(actionItemsBGView.transform, 0.0, 0.0);
+    } completion:nil];
+    
+
+}
+
+
 /*
  *  Creates theme imageView
  */
