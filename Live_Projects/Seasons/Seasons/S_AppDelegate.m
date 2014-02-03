@@ -18,7 +18,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
         
-    _rootViewController = [[UIStoryboard storyboardWithName:AppStoryboard bundle: nil] instantiateViewControllerWithIdentifier:@"S_BaseViewController"];
+    _rootViewController = [[UIStoryboard storyboardWithName:AppStoryboard bundle: nil] instantiateViewControllerWithIdentifier:@"S_BaseNaviViewController"];
     self.window.rootViewController = _rootViewController;
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 
