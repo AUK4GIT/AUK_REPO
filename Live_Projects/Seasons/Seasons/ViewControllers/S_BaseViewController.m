@@ -47,8 +47,9 @@
     
 	// Do any additional setup after loading the view.
     actionItemBGBlurView.layer.cornerRadius = 10.0f;
+    [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
-
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
     //Presents Login Screen
     [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.5];
 

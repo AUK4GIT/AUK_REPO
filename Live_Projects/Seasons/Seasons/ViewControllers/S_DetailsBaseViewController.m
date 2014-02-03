@@ -7,7 +7,7 @@
 //
 
 #import "S_DetailsBaseViewController.h"
-
+#import "S_GalleryItemCell.h"
 @interface S_DetailsBaseViewController ()
 {
 
@@ -47,5 +47,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Action Items CollectionView DataSources
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
+{
+    return 6;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    // we're going to use a custom UICollectionViewCell, which will hold an image and its label
+    //
+    
+    S_GalleryItemCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GalleryItemCell" forIndexPath:indexPath];
+    
+    CALayer *layer = cell.layer;
+    layer.masksToBounds = NO;
+    [layer setShadowOffset:CGSizeMake(2, 2)];
+    [layer setShadowRadius:1.0];
+    [layer setShadowColor:[UIColor blackColor].CGColor] ;
+    [layer setShadowOpacity:0.5];
+    [layer setShadowPath:[[UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:10.0] CGPath]];
+    
+//    cell.imageView.layer.masksToBounds = YES;
+//    cell.bottomBar.layer.masksToBounds = NO;
+//    cell.imageView.layer.cornerRadius = 10.0;
+//    cell.bottomBar.layer.cornerRadius = 10.0;
+    
+    return cell;
+}
+
 
 @end

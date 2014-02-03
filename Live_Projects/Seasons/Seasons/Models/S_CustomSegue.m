@@ -31,7 +31,9 @@
  */
 - (void)animateItemDetailsPresentation
 {
-    [[self sourceViewController] presentModalViewController:[self destinationViewController] animated:NO];
+    //[[self sourceViewController] presentModalViewController:[self destinationViewController] animated:NO];
+    [[[self sourceViewController] navigationController] pushViewController:[self destinationViewController] animated:NO];
+
 
     UIView *destinationView = [[self destinationViewController] view];
     destinationView.alpha = 0.0;
@@ -55,7 +57,7 @@
 {
     
     UIView *sourceView = [[self sourceViewController] view];
-    
+
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
         sourceView.transform = CGAffineTransformMakeScale(1.1, 1.1);
@@ -63,7 +65,8 @@
         
     } completion:^(BOOL finished) {
         
-        [[self sourceViewController] dismissViewControllerAnimated:NO completion:nil];
+        [[[self sourceViewController] navigationController] popViewControllerAnimated:NO];
+
         sourceView.transform = CGAffineTransformIdentity;
         sourceView.alpha = 0.8;
     }];
