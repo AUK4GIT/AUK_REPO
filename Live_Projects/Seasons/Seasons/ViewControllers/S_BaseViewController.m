@@ -47,6 +47,7 @@
     
 	// Do any additional setup after loading the view.
     actionItemBGBlurView.layer.cornerRadius = 10.0f;
+    actionItemBGBlurView.layer.masksToBounds = YES;
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     self.navigationController.view.backgroundColor = [UIColor whiteColor];

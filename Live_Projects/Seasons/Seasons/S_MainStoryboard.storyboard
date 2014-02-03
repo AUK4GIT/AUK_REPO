@@ -35,6 +35,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-lz-keJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="krf-Up-6aQ">
                                 <rect key="frame" x="20" y="20" width="280" height="50"/>
@@ -64,10 +65,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d37-NS-Vqh">
+                                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="d37-NS-Vqh">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="212"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.64652683420000001" green="0.087684600660000001" blue="0.29008027930000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.85665760869999996" green="0.056546526100000001" blue="0.20393910639999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="arS-6e-J1g"/>
                                                     <constraint firstAttribute="height" constant="212" id="yfL-jx-JGc"/>
@@ -179,7 +180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-Dj-eUD">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-Dj-eUD">
                                 <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.64652683420000001" green="0.087684600660000001" blue="0.29008027930000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -337,7 +338,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.58823529409999997" green="0.84313725490000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17064340196375791" green="0.43476834478145227" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAf-rd-1Mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,6 +347,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.png" width="640" height="960"/>
         <image name="act_item1.png" width="96" height="96"/>
         <image name="theme4.jpg" width="640" height="1136"/>
     </resources>

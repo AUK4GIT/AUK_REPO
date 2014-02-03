@@ -43,6 +43,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     bgBlurImageView.layer.cornerRadius = 10.0;
+    bgBlurImageView.layer.masksToBounds = YES;
+
 }
 
 - (void)didReceiveMemoryWarning

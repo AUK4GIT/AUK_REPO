@@ -34,6 +34,7 @@
 		AAB084BC1896D39B003329DF /* S_ActionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BB1896D39B003329DF /* S_ActionItemCell.m */; };
 		AAB084C01896D6E4003329DF /* S_ActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB084BF1896D6E4003329DF /* S_ActionItem.m */; };
 		AAD2632218997F220073428F /* S_ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD2632118997F220073428F /* S_ImageView.m */; };
+		AADCDA4C18A016BD005D8311 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCDA4B18A016BD005D8311 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		AAB084BF1896D6E4003329DF /* S_ActionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ActionItem.m; path = Models/ModelEntities/S_ActionItem.m; sourceTree = "<group>"; };
 		AAD2632018997F220073428F /* S_ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S_ImageView.h; path = Views/S_ImageView.h; sourceTree = "<group>"; };
 		AAD2632118997F220073428F /* S_ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S_ImageView.m; path = Views/S_ImageView.m; sourceTree = "<group>"; };
+		AADCDA4B18A016BD005D8311 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 		AAA3D4C11894200A0040646C /* ThemeImages */ = {
 			isa = PBXGroup;
 			children = (
+				AADCDA4B18A016BD005D8311 /* 1.png */,
 				AAA3D4C5189420410040646C /* theme4.jpg */,
 			);
 			name = ThemeImages;
@@ -363,6 +366,7 @@
 				AAA3D4CB189420410040646C /* theme4.jpg in Resources */,
 				AAA3D46E1893DA280040646C /* InfoPlist.strings in Resources */,
 				AAA3D4D01894344C0040646C /* S_MainStoryboard.storyboard in Resources */,
+				AADCDA4C18A016BD005D8311 /* 1.png in Resources */,
 				AAA3D4761893DA280040646C /* Images.xcassets in Resources */,
 				AAB084B81896BD6E003329DF /* act_item1.png in Resources */,
 			);

@@ -39,7 +39,7 @@
     destinationView.alpha = 0.0;
     destinationView.transform = CGAffineTransformMakeScale(1.1, 1.1);
 
-        [UIView animateWithDuration:0.3 delay:0.4 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             
             destinationView.transform = CGAffineTransformIdentity;
             destinationView.alpha = 0.8;
