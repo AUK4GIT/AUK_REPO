@@ -11,7 +11,7 @@
 @interface S_LoginViewController ()
 
 - (IBAction)skipLogin:(id)sender;
-
+-(IBAction)textFieldDidEndOnExit:(UITextField *)sender;
 @end
 
 @implementation S_LoginViewController
@@ -52,5 +52,10 @@
 - (IBAction)skipLogin:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)textFieldDidEndOnExit:(UITextField *)sender
+{
+    
 }
 @end

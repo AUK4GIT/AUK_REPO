@@ -63,6 +63,8 @@ static AppActionItem appActionItem;
         default:
             break;
     }
+    
+    NSLog(@"appActionItem: %d",appActionItem);
 }
 
 /*

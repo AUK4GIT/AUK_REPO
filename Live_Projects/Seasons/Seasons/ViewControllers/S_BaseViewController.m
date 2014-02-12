@@ -12,6 +12,7 @@
 #import "S_Helper.h"
 
 @interface S_BaseViewController ()
+- (IBAction)loginAction:(id)sender;
 
 @end
 
@@ -52,7 +53,7 @@
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     //Presents Login Screen
-    [self performSelector:@selector(PresentLoginView) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(loginAction:) withObject:nil afterDelay:0.5];
 
 }
 
@@ -68,7 +69,7 @@
 {
     [super viewDidDisappear:animated];
     
-    [self minimizeView];
+    //[self minimizeView];
     
 }
 
@@ -115,9 +116,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [self performSelector:@selector(minimizeView) withObject:nil afterDelay:0.2];
     [self performSelector:@selector(loadDetailsView:) withObject:@"ItemSelectionSegue" afterDelay:0.6];
-    
 }
 
 
@@ -176,4 +177,9 @@
     [self performSegueWithIdentifier:@"PresentLoginView" sender:self];
 }
 
+- (IBAction)loginAction:(id)sender {
+    
+    [self performSelector:@selector(minimizeView) withObject:nil afterDelay:0.2];
+    [self performSelector:@selector(PresentLoginView) withObject:@"ItemSelectionSegue" afterDelay:0.6];
+}
 @end
